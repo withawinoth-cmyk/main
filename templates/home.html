@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="/static/css/home.css">
+    </head>
+
+    <body>
+        <div class="menu"></div>
+        <div class="center_box">
+            <div class="box_main">
+                <button class="start">START</button>
+                <div class="center">
+                    <div class="login_register"><img src="/static/imgs/login_register.png" alt="">
+                        <div class="login_register_box"><img src="/static/imgs/login_register_box.png" alt="">
+                            {% if name and role is not none %}
+                            <p class="msg">{{ name }}<p class="role">{{ role_name }}</p></p>
+                            <button class="logout" onclick="location='/logout'">Logout</button>
+                            {% else %}
+                            <button class="login" onclick="location='/login'">เข้าสู่ระบบ</button>
+                            <button class="register" onclick="location='/register'">สมัครสมาชิก</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg"></div>
+        <div class="end"></div>
+    </body>
+</html>

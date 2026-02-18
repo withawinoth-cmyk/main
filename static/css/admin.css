@@ -1,0 +1,26 @@
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+    font-size: 20px;
+    font-family: Anuphan;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.admin-table th {
+    background-color: #222;
+    color: white;
+}
+
+.role-form {
+    font-size: 20px;
+    font-family: Anuphan;
+    font-weight: 500;
+    text-align: left;
+    border: 0;
+}

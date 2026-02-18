@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADMIN</title>
+        <link rel="stylesheet" href="/static/css/admin.css">
+    </head>
+
+    <body>
+        <div class="center">
+            <form action="/admin" method="post">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.role }}</td>
+
+                            <td>
+                                <form method="post" class="role-form">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <select name="role_set">
+                                        <option value="">---</option>
+                                        <option value="0">User</option>
+                                        <option value="1">Admin</option>
+                                        <option value="2">Supper Admin</option>
+                                    </select>
+                                    <button type="submit" class="submit">submit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
